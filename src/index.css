@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slick-dots li button:before {
+	color: white; /* Change dot color */
+}
+
+.slick-dots li.slick-active button:before {
+	color: #ff0000; /* Change color for the active dot */
+}
+
+/* ***** Image Carousel ****** */
+.large-bg {
+	background-size: 350%;
+}
+
+/* *********** Navbar hover translate ************** */
+.li-hover {
+	position: relative;
+	display: inline-block;
+	height: 40px;
+	width: 100px;
+	overflow: hidden;
+	white-space: nowrap; /* Prevents text wrapping */
+}
+
+.li-hover-medium {
+	position: relative;
+	display: inline-block;
+	height: 40px;
+	width: 200px;
+	overflow: hidden;
+	white-space: nowrap; /* Prevents text wrapping */
+}
+
+.text-content,
+.text-hover-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: opacity 0.5s ease-out;
+	width: 70%;
+	text-align: center;
+}
+
+.text-content {
+	opacity: 1;
+}
+
+.text-hover-content {
+	opacity: 0;
+	pointer-events: none; /* Prevents hover effects from activating on the hidden element */
+}
+
+.li-hover:hover .text-content {
+	opacity: 0;
+}
+
+.li-hover:hover .text-hover-content {
+	opacity: 1;
+}
+
+/* ******** Initial full-screen logo style ******* */
+.fullscreen-logo {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: black;
+	z-index: 1000; /* Ensure it's above other content */
+	transition: opacity 1s ease-out, visibility 1s ease-out;
+}
+
+/* Style to apply when fading out */
+.hidden-logo {
+	opacity: 0;
+	visibility: hidden;
+}
