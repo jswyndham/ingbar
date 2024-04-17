@@ -1,7 +1,5 @@
-import React from 'react';
-
-function SmallSidebar() {
-	return <div>SmallSidebar</div>;
-}
+const SmallSidebar = () => {
+  return <div>SmallSidebar</div>;
+};
 
 export default SmallSidebar;

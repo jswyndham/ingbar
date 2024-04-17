@@ -1,38 +1,37 @@
-import React from 'react';
-import Slider from 'react-slick';
-import imageOne from '../images/Shinjyuku-yakitori.jpg';
-import imageTwo from '../images/ing-bar.jpg';
-import imageThree from '../images/hako_ing_logo-small.jpg';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import Slider from "react-slick";
+import imageOne from "../images/ing-room.jpg";
+import imageTwo from "../images/ing-bar.jpg";
+import imageThree from "../images/hako_ing_logo-small.jpg";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const images = [imageOne, imageTwo, imageThree];
 
 const ImageCarousel = () => {
-	const settings = {
-		dots: true,
-		infinite: true,
-		speed: 1000,
-		fade: true, // photo fade selection
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		autoplay: true,
-		autoplaySpeed: 5000,
-	};
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 1000,
+    fade: true, // photo fade selection
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+  };
 
-	return (
-		<Slider {...settings}>
-			{images.map((url, index) => (
-				<div key={index}>
-					<img
-						src={url}
-						alt={`Slide ${index}`}
-						className="max-w-full max-h-[600px] mx-auto"
-					/>
-				</div>
-			))}
-		</Slider>
-	);
+  return (
+    <Slider {...settings}>
+      {images.map((url, index) => (
+        <div key={index}>
+          <img
+            src={url}
+            alt={`Slide ${index}`}
+            className="max-w-full max-h-[600px] mx-auto"
+          />
+        </div>
+      ))}
+    </Slider>
+  );
 };
 
 export default ImageCarousel;
