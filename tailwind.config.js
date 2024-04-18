@@ -15,6 +15,14 @@ export default {
 				25: '100px',
 				50: '200px',
 			},
+			variants: {
+				extend: {
+					textDecoration: ['after'], // Enable text-decoration utilities on ::after pseudo-elements
+					width: ['after'], // Enable width utilities on ::after pseudo-elements
+					backgroundColor: ['after'], // Enable background color utilities on ::after pseudo-elements
+					inset: ['after'], // Enable position utilities on ::after pseudo-elements
+				},
+			},
 		},
 	},
 	plugins: [],
