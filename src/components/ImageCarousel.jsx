@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import imageOne from '../images/ing-room.jpg';
 import imageTwo from '../images/ing-bar.jpg';
@@ -9,6 +10,18 @@ import 'slick-carousel/slick/slick-theme.css';
 const images = [imageOne, imageTwo, imageThree, imageFour];
 
 const ImageCarousel = () => {
+	const [key, setKey] = useState(0);
+
+	useEffect(() => {
+		const handleResize = () => {
+			// Reinitialize the component key, causing a re-render to better handle re-sizing adjustment
+			setKey((prevKey) => prevKey + 1);
+		};
+
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
 	const settings = {
 		dots: true,
 		infinite: true,
@@ -17,7 +30,7 @@ const ImageCarousel = () => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 5000,
+		autoplaySpeed: 4000,
 	};
 
 	return (
@@ -27,7 +40,7 @@ const ImageCarousel = () => {
 					<img
 						src={url}
 						alt={`Slide ${index}`}
-						className="max-w-full max-h-[700px] mx-auto"
+						className="max-w-full xl:max-w-4xl max-h-[700px] mx-auto"
 					/>
 				</div>
 			))}

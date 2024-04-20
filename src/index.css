@@ -82,3 +82,31 @@
 	opacity: 0;
 	visibility: hidden;
 }
+
+/* MenuToggle styles */
+.menu-toggle {
+	position: fixed;
+	top: 10px; /* Adjust based on your layout */
+	right: 10px; /* Adjust based on your layout */
+	z-index: 1050; /* Ensures it's above sidebar and other content */
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* SidebarMenu styles */
+.fixed-sidebar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 64px; /* Adjust the width as necessary */
+	background-color: black;
+	border-left: 1px solid slate-700;
+	box-shadow: 0px 0px 10px 0px rgba(70, 70, 70, 0.5); /* slight shadow for depth */
+	z-index: 1040; /* High enough to be above the page content but below the toggle button */
+}

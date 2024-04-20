@@ -19,7 +19,7 @@ const Footer = () => {
 								<img
 									src={logo}
 									alt="Rock Bar ING white logo"
-									className="h-28"
+									className="h-20 md:h-28"
 								/>
 							</Link>
 						</div>
