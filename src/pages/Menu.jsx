@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Menu() {
-	return <div>Menu</div>;
+	return <article className="w-screen h-screen bg-black">Menu</article>;
 }
 
 export default Menu;

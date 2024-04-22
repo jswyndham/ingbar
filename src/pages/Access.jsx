@@ -1,7 +1,5 @@
-import React from 'react';
-
 function Access() {
-	return <div>Access</div>;
+	return <article className="w-screen h-screen bg-black">Access</article>;
 }
 
 export default Access;
