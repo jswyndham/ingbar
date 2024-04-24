@@ -24,7 +24,9 @@ const SidebarMenu = () => {
 
 	return (
 		<>
-			<MenuToggle toggle={toggleSidebar} isOpen={isOpen} />
+			<div className="relative">
+				<MenuToggle toggle={toggleSidebar} isOpen={isOpen} />
+			</div>
 			<motion.div
 				className="fixed z-20 top-0 left-0 w-full h-full bg-black bg-opacity-70"
 				initial="closed"

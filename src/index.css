@@ -85,7 +85,7 @@
 
 /* MenuToggle styles */
 .menu-toggle {
-	position: fixed;
+	position: absolute;
 	top: 10px; /* Adjust based on your layout */
 	right: 10px; /* Adjust based on your layout */
 	z-index: 1050; /* Ensures it's above sidebar and other content */

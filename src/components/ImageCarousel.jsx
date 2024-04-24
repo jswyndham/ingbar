@@ -40,7 +40,7 @@ const ImageCarousel = () => {
 					<img
 						src={url}
 						alt={`Slide ${index}`}
-						className="max-w-full xl:max-w-4xl max-h-[700px] mx-auto"
+						className="max-w-full xl:max-w-5xl mx-auto"
 					/>
 				</div>
 			))}

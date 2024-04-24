@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../images/white-logo-main.png';
+import logoBackImage from '../images/pexels-edwardeyer-ing-home-sm.jpg';
 import logoWhite from '../images/ing-logo-black-transparent-background.png';
 import ImageCarousel from '../components/ImageCarousel';
 import OpeningHours from '../components/OpeningHours';
@@ -58,7 +59,7 @@ const Home = () => {
 		hidden: { opacity: 0 },
 		visible: {
 			opacity: 1,
-			transition: { delay: 1, duration: 1 }, // Coordinates with background transition
+			transition: { delay: 1.5, duration: 1 }, // Coordinates with background transition
 		},
 	};
 
@@ -67,7 +68,7 @@ const Home = () => {
 			initial="white"
 			animate={backgroundBlack ? 'black' : 'white'}
 			variants={backgroundVariants}
-			className="relative w-full h-full overflow-hidden"
+			className="relative w-full h-full"
 		>
 			<AnimatePresence>
 				{!hideLogo && (
@@ -81,7 +82,7 @@ const Home = () => {
 						<h1 className="text-black font-gochiHand text-xl md:text-3xl lg:text-5xl mb-10 md:mb-14 text-center">
 							Welcome to Kyoto's{' '}
 							<span className="text-red-500">#1</span> late night
-							bar!
+							bar
 						</h1>
 						<motion.img
 							src={logoWhite}
@@ -94,14 +95,25 @@ const Home = () => {
 
 			<AnimatePresence>
 				{hideLogo && (
-					<motion.img
-						src={logo}
-						alt="Main Logo"
-						initial="hidden"
-						animate="visible"
-						variants={mainLogoVariants}
-						className="mx-auto w-3xl lg:max-w-5xl pt-12 md:pt-2"
-					/>
+					<motion.div className="relative overflow-hidden w-screen my-12 md:m-auto">
+						<motion.img
+							src={logoBackImage}
+							alt="Background"
+							initial="hidden"
+							animate="visible"
+							variants={contentFadeInVariants}
+							className="w-full h-auto"
+						/>
+
+						<motion.img
+							src={logo}
+							alt="Main Logo"
+							initial="hidden"
+							animate="visible"
+							variants={mainLogoVariants}
+							className="absolute inset-0 mx-auto w-2xl md:max-w-3xl lg:max-w-4xl 3xl:max-w-5xl pb-2"
+						/>
+					</motion.div>
 				)}
 			</AnimatePresence>
 
@@ -110,6 +122,7 @@ const Home = () => {
 					initial="hidden"
 					animate="visible"
 					variants={contentFadeInVariants}
+					className="relative md:mt-4 lg:mt-[-50px] xl:mt-[-200px] 2xl:mt-[-400px] 3xl:mt-[-500px] 4xl:mt-[-630px] 5xl:mt-[-850px]"
 				>
 					<div className="mb-20 lg:mb-24">
 						<ImageCarousel />
