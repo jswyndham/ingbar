@@ -14,17 +14,46 @@ const Home = () => {
 	const [backgroundBlack, setBackgroundBlack] = useState(false); // Controls if background should transition
 
 	useEffect(() => {
-		const hideTimer = setTimeout(() => {
+		const isFirstLoad = !sessionStorage.getItem('hasLoaded');
+		console.log('isFirstLoaded', isFirstLoad);
+		sessionStorage.setItem('hasLoaded', 'true'); // Set 'hasLoaded' immediately
+
+		const navigationEntries = performance.getEntriesByType('navigation');
+		const navigationType =
+			navigationEntries.length > 0
+				? navigationEntries[0].type
+				: 'navigate';
+
+		if (isFirstLoad || navigationType === 'reload') {
+			const hideTimer = setTimeout(() => {
+				setHideLogo(true);
+			}, 2000);
+			const backgroundTimer = setTimeout(() => {
+				setBackgroundBlack(true);
+			}, 2250);
+
+			return () => {
+				clearTimeout(hideTimer);
+				clearTimeout(backgroundTimer);
+			};
+		} else {
 			setHideLogo(true);
-		}, 2000); // Hide the intro logo after 2 seconds
-		const backgroundTimer = setTimeout(() => {
-			setBackgroundBlack(true); // Start background transition after 3 seconds
-		}, 2250);
-		return () => {
-			clearTimeout(hideTimer);
-			clearTimeout(backgroundTimer);
-		};
+			setBackgroundBlack(true);
+		}
 	}, []);
+
+	// useEffect(() => {
+	// 	const hideTimer = setTimeout(() => {
+	// 		setHideLogo(true);
+	// 	}, 2000); // Hide the intro logo after 2 seconds
+	// 	const backgroundTimer = setTimeout(() => {
+	// 		setBackgroundBlack(true); // Start background transition after 3 seconds
+	// 	}, 2250);
+	// 	return () => {
+	// 		clearTimeout(hideTimer);
+	// 		clearTimeout(backgroundTimer);
+	// 	};
+	// }, []);
 
 	const introLogoVariants = {
 		hidden: { opacity: 0, y: 50 },
@@ -87,6 +116,10 @@ const Home = () => {
 						<motion.img
 							src={logoWhite}
 							alt="Intro Logo"
+							initial="hidden"
+							animate="visible"
+							exit="exit" // Ensure this matches a key in the `introLogoVariants`
+							variants={introLogoVariants}
 							className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl lg:-mb-12"
 						/>
 					</motion.div>
