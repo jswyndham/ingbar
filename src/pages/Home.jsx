@@ -109,9 +109,8 @@ const Home = () => {
 						className="fixed inset-0 flex flex-col items-center justify-center z-50"
 					>
 						<h1 className="text-black font-gochiHand text-xl md:text-3xl lg:text-5xl mb-10 md:mb-14 text-center">
-							Welcome to Kyoto's{' '}
-							<span className="text-red-500">#1</span> late night
-							bar
+							Kyoto's <span className="text-red-500">#1</span>{' '}
+							late night bar
 						</h1>
 						<motion.img
 							src={logoWhite}

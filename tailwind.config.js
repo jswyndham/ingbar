@@ -50,6 +50,9 @@ export default {
 
 				'5xl': '2300px',
 			},
+			backgroundImage: {
+				'menu-image': "url('./images/ing-records.jpg')",
+			},
 		},
 	},
 	plugins: [],

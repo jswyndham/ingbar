@@ -35,7 +35,7 @@ const SidebarMenu = () => {
 				onClick={toggleSidebar} // Close sidebar when backdrop is clicked
 			/>
 			<motion.nav
-				className="fixed z-30 top-0 right-0 bottom-0 w-11/12 bg-slate-900 text-white border-l-2 border-slate-700  md:hidden"
+				className="fixed z-50 top-0 right-0 bottom-0 w-11/12 bg-slate-900 text-white border-l-2 border-slate-700  md:hidden"
 				initial="closed"
 				animate={isOpen ? 'open' : 'closed'}
 				variants={sidebarVariants}
