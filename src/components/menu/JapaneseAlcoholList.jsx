@@ -15,14 +15,14 @@ function JapaneseAlcoholList() {
 			opacity: 1,
 			transition: {
 				height: {
-					duration: 1,
+					duration: 0.7,
 					ease: 'easeInOut',
 					delay: 0.3, // Delay the height expansion to coordinate with other UI elements
 				},
 				opacity: {
-					duration: 1,
+					duration: 0.7,
 					ease: 'easeInOut',
-					delay: 0.5, // Delay opacity to match the height animation
+					delay: 0.4, // Delay opacity to match the height animation
 				},
 			},
 		},

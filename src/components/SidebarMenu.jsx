@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import MenuToggle from './MenuToogle';
 import { Link } from 'react-router-dom';
 import { RiBeerFill } from 'react-icons/ri';
-import { IoFastFood } from 'react-icons/io5';
+import { PiBowlFoodFill } from 'react-icons/pi';
 import { FaMapMarkedAlt } from 'react-icons/fa';
 import ingOnlyLogo from '../images/ing-large-white-transparent.png';
 
@@ -35,7 +35,7 @@ const SidebarMenu = () => {
 				onClick={toggleSidebar} // Close sidebar when backdrop is clicked
 			/>
 			<motion.nav
-				className="fixed z-50 top-0 right-0 bottom-0 w-11/12 bg-slate-900 text-white border-l-2 border-slate-700  md:hidden"
+				className="fixed z-50 top-0 right-0 bottom-0 w-11/12 bg-slate-950 text-white border-l-2 border-slate-700  md:hidden"
 				initial="closed"
 				animate={isOpen ? 'open' : 'closed'}
 				variants={sidebarVariants}
@@ -63,7 +63,7 @@ const SidebarMenu = () => {
 				<ul className="flex flex-col text-2xl pl-4 py-4 font-robotoSlab">
 					<Link to="/">
 						<li
-							className="flex flex-row py-8 transition-all hover:text-red-300 active:text-red-500 hover:cursor-pointer"
+							className="flex flex-row py-8 transition-all active:text-red-500 hover:cursor-pointer"
 							onClick={toggleSidebar}
 						>
 							<div className="mt-0.5 pr-4">
@@ -75,11 +75,11 @@ const SidebarMenu = () => {
 
 					<Link to="/menu">
 						<li
-							className="flex flex-row py-8 relative transition-all hover:text-red-300 active:text-red-500  hover:cursor-pointer"
+							className="flex flex-row py-8 relative transition-all active:text-red-500  hover:cursor-pointer"
 							onClick={toggleSidebar}
 						>
 							<div className="mt-0.5 pr-4">
-								<IoFastFood />
+								<PiBowlFoodFill />
 							</div>
 							<span className="">MENU | メニュー</span>
 						</li>
@@ -87,7 +87,7 @@ const SidebarMenu = () => {
 
 					<Link to="/access">
 						<li
-							className="flex flex-row py-8 relative transition-all hover:text-red-300 active:text-red-500  hover:cursor-pointer"
+							className="flex flex-row py-8 relative transition-all active:text-red-500  hover:cursor-pointer"
 							onClick={toggleSidebar}
 						>
 							<div className="mt-0.5 pr-4">

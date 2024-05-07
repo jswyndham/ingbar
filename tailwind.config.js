@@ -7,6 +7,8 @@ export default {
 				shadows: ['Shadows Into Light', 'regular', 'cursive'],
 				gochiHand: ['"Gochi Hand"', 'cursive'],
 				robotoSlab: ['Roboto Slab', 'serif'],
+				japaneseSans: ['Japanese', 'sans-serif'],
+				japaneseNoto: ['Noto Serif JP', 'serif'],
 			},
 			backgroundImage: {
 				'ing-beer': "url('./src/images/ing-beer.jpg')",

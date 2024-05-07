@@ -25,7 +25,7 @@ const AboutUs = () => {
 					and connect with us no matter where you are around the
 					world.
 				</p>
-				<div className="flex justify-start pt-4 pl-8">
+				<div className="flex justify-center pt-4 w-full bg-slate-400 p-4 rounded-xl bg-opacity-30 border border-slate-800 shadow-lg shadow-slate-300">
 					<SocialMediaLinks />
 				</div>
 			</div>

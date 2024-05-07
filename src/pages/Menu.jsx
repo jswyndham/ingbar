@@ -20,10 +20,18 @@ function Menu() {
 			}}
 			className="relative w-screen h-screen overflow-hidden"
 		>
-			<div className="absolute top-0 left-0 w-full h-full overflow-auto bg-black bg-opacity-60 z-40 flex flex-col">
-				<div className="pt-28 pb-16 lg:py-16 flex flex-row justify-center">
-					<img src={logo} alt="ing logo" className="h-20 mx-4" />
-					<h2 className="font-serif text-7xl px-4 mt-1">Menu</h2>
+			<div className="absolute -top-8 lg:top-0 left-0 w-full h-full overflow-auto bg-black bg-opacity-60 z-40 flex flex-col">
+				<div className="flex justify-center">
+					<div className="h-fit w-10/12 md:w-9/12 lg:w-7/12 2xl:w-5/12 p-12 mt-28 mb-16 bg-gray-400 bg-opacity-40 backdrop-blur-sm flex flex-row justify-center rounded-lg shadow-xl shadow-slate-900">
+						<img
+							src={logo}
+							alt="ing logo"
+							className="h-14 md:h-20"
+						/>
+						<h2 className="font-serif text-5xl md:text-7xl px-4 mt-1">
+							Menu
+						</h2>
+					</div>
 				</div>
 
 				<BarMealsList />

@@ -15,12 +15,12 @@ function BeerList() {
 			opacity: 1,
 			transition: {
 				height: {
-					duration: 1,
+					duration: 0.8,
 					ease: 'easeInOut',
 					delay: 0.3, // Delay the height expansion to coordinate with other UI elements
 				},
 				opacity: {
-					duration: 1,
+					duration: 0.8,
 					ease: 'easeInOut',
 					delay: 0.5, // Delay opacity to match the height animation
 				},

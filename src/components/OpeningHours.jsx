@@ -1,13 +1,15 @@
+import { Link } from 'react-router-dom';
+
 const OpeningHours = () => {
 	return (
-		<div className="relative overflow-hidden max-w-4xl my-12 md:m-auto">
+		<article className="relative overflow-hidden max-w-4xl my-12 md:m-auto">
 			{/* Background Image with overlay */}
 			<img
 				src="./src/images/ing-beer.jpg"
 				alt="Background"
 				className="w-full h-auto"
 			/>
-			<div className="absolute inset-0 bg-black opacity-60"></div>
+			<div className="absolute inset-0 bg-black opacity-50"></div>
 
 			{/* Content Container using Flexbox */}
 			<div className="absolute inset-0 flex flex-col justify-between p-4 sm:py-44 md:p-8">
@@ -40,13 +42,16 @@ const OpeningHours = () => {
 						<p className="font-shadows py-2 lg:py-4">
 							Cocktails ¥650
 						</p>
-						<p className="font-bold underline underline-offset-4 pt-4">
+						<Link
+							to="/menu"
+							className="font-bold underline underline-offset-4 pt-4 text-yellow-400"
+						>
 							English menu available
-						</p>
+						</Link>
 					</div>
 				</div>
 			</div>
-		</div>
+		</article>
 	);
 };
 

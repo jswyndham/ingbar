@@ -7,21 +7,27 @@ const Navbar = () => {
 				<Link to="/">
 					<li className="w-25 md:w-50 li-hover relative border-white border-r-2 inline-block transition-all duration-500 hover:text-red-500 hover:cursor-pointer">
 						<span className="text-content">ING BAR</span>
-						<span className="text-hover-content">イング居酒屋</span>
+						<span className="text-hover-content font-japaneseNoto">
+							イング居酒屋
+						</span>
 					</li>
 				</Link>
 
 				<Link to="/menu">
 					<li className="li-hover relative border-white border-r-2 inline-block transition-all w-25 md:w-50 duration-500 hover:text-red-500 hover:cursor-pointer">
 						<span className="text-content ">MENU</span>
-						<span className="text-hover-content ">メニュー</span>
+						<span className="text-hover-content font-japaneseNoto">
+							メニュー
+						</span>
 					</li>
 				</Link>
 
 				<Link to="/access">
 					<li className="li-hover relative inline-block transition-all duration-500 w-25 md:w-50 hover:text-red-500 hover:cursor-pointer">
 						<span className="text-content ">ACCESS</span>
-						<span className="text-hover-content ">アクセス</span>
+						<span className="text-hover-content font-japaneseNoto">
+							アクセス
+						</span>
 					</li>
 				</Link>
 			</ul>

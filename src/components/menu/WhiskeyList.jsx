@@ -15,14 +15,14 @@ function WhiskeyList() {
 			opacity: 1,
 			transition: {
 				height: {
-					duration: 1,
+					duration: 0.7,
 					ease: 'easeInOut',
-					delay: 0.3, // Delay the height expansion to coordinate with other UI elements
+					delay: 0.2, // Delay the height expansion to coordinate with other UI elements
 				},
 				opacity: {
-					duration: 1,
+					duration: 0.8,
 					ease: 'easeInOut',
-					delay: 0.5, // Delay opacity to match the height animation
+					delay: 0.4, // Delay opacity to match the height animation
 				},
 			},
 		},
@@ -93,7 +93,7 @@ function WhiskeyList() {
 						variants={menuVariants}
 					>
 						<div className="flex flex-col justify-center items-center py-4 text-xl font-serif">
-							<p className="text-red-400">
+							<p className="text-yellow-500">
 								* Mixer added (cola, soda, ginger ale, etc)
 							</p>
 							<div className="flex flex-row">
