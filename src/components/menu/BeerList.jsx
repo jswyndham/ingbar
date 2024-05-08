@@ -44,10 +44,10 @@ function BeerList() {
 	};
 
 	return (
-		<div className="flex flex-col justify-center items-center">
+		<div className="flex flex-col justify-center items-center w-full md:w-9/12 xl:w-7/12 3xl:w-5/12">
 			<div
 				onClick={handleBeerList}
-				className="z-10 my-8 py-2 bg-gray-950 border-t border-b border-gray-400 w-10/12 md:w-9/12 lg:w-7/12 2xl:w-5/12 h-24 flex flex-col text-lg md:text-xl justify-center items-center text-center hover:cursor-pointer"
+				className="z-10 my-8 py-2 bg-gray-950 border-t border-b border-gray-400 w-full h-24 flex flex-col text-lg md:text-xl justify-center items-center text-center hover:cursor-pointer"
 			>
 				<div className="flex flex-col">
 					<h3 className="pb-1 font-robotoSlab text-white  flex justify-center items-center">
