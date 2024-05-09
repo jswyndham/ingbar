@@ -3,7 +3,7 @@ import ingFront from "../images/ing-front.jpg";
 import ingFirstFloor from "../images/ing-first-floor.jpg";
 import ingStairs from "../images/ing-stairs.jpg";
 import ingDoor from "../images/ing-door.jpg";
-import logo from "../images/ing-large-white-transparent.png";
+import logo from "../images/logo-ing-only-white.png";
 import { Helmet } from "react-helmet";
 
 function Access() {
