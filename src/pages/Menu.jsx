@@ -8,7 +8,7 @@ import BarMealsList from "../components/menu/BarMeals";
 import JapaneseAlcoholList from "../components/menu/JapaneseAlcoholList";
 import NonAlcoholicList from "../components/menu/NonAlcoholicList";
 import WhiskeyList from "../components/menu/WhiskeyList";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
 
 function Menu() {
   return (
@@ -22,13 +22,13 @@ function Menu() {
       className="relative w-screen h-screen overflow-hidden"
     >
       <div className="absolute -top-8 lg:top-0 left-0 w-full h-full overflow-auto bg-black bg-opacity-60 z-40 flex flex-col justify-center items-center">
-        <Helmet>
+        {/* <Helmet>
           <title>Rock Bar ING Kyoto - Menu</title>
           <meta
             name="description"
             content="Welcome to Rock Bar ING, the best late-night bar in Kyoto, Japan, where rock music is life and the drinks keep flowing. Located on Kiyamachi Street, Kyoto city."
           />
-        </Helmet>
+        </Helmet> */}
 
         <div className="flex justify-center w-full">
           <div className="h-fit w-10/12 md:w-9/12 lg:w-7/12 2xl:w-5/12 p-12 mt-28 mb-16 bg-gray-400 bg-opacity-40 backdrop-blur-sm flex flex-row justify-center rounded-lg shadow-xl shadow-slate-900">
@@ -49,8 +49,6 @@ function Menu() {
           <JapaneseAlcoholList />
 
           <WhiskeyList />
-
-          {/* <SpiritsList /> */}
 
           <NonAlcoholicList />
         </div>

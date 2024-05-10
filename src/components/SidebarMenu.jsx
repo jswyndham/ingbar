@@ -30,12 +30,14 @@ const SidebarMenu = () => {
       <motion.div
         className="fixed z-20 top-0 left-0 w-full h-full bg-black bg-opacity-70"
         initial="closed"
+        style={{ opacity: 1 }}
         animate={isOpen ? "open" : "closed"}
         variants={backdropVariants}
         onClick={toggleSidebar} // Close sidebar when backdrop is clicked
       />
       <motion.nav
         className="fixed z-50 top-0 right-0 bottom-0 w-11/12 bg-slate-950 text-white border-l-2 border-slate-700  md:hidden"
+        style={{ opacity: 1 }}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
         variants={sidebarVariants}
@@ -53,6 +55,7 @@ const SidebarMenu = () => {
           src={ingOnlyLogo}
           alt="Main Logo"
           initial={{ opacity: 0 }}
+          style={{ opacity: 0 }}
           animate={{ opacity: isOpen ? 1 : 0 }}
           exit={{ opacity: 0 }}
           className="h-9 w-16 m-5 shadow-[0_10px_60px_-15px_rgba(0,0,0,0.1)] shadow-slate-400"
