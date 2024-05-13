@@ -7,7 +7,7 @@ import OpeningHours from "../components/OpeningHours";
 import AboutUs from "../components/AboutUs";
 import Footer from "../components/Footer";
 import ReviewsCarousel from "../components/ReviewsCarousel";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const ref = useRef(null);
@@ -36,10 +36,38 @@ const Home = () => {
     <>
       <motion.article className="relative overflow-hidden w-screen h-full bg-black my-12 md:m-auto">
         <Helmet>
-          <title>Rock Bar ING Kyoto - Home</title>
+          <title>
+            Rock Bar ING Kyoto - Best Rock Music and Nightlife in Kyoto
+          </title>
           <meta
             name="description"
-            content="Welcome to Rock Bar ING, the best late-night bar in Kyoto, Japan, where rock music is life and the drinks keep flowing. Located on Kiyamachi Street, Kyoto city."
+            content="Experience the best of Kyoto nightlife at Rock Bar ING. Enjoy live rock music, expertly crafted drinks, and a vibrant atmosphere on Kiyamachi Street."
+          />
+          <link rel="canonical" href="http://www.kyotoingbar.com/" />
+          {/* Facebook tags */}
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:title"
+            content="Rock Bar ING Kyoto - Best Rock Music and Nightlife in Kyoto"
+          />
+          <meta
+            property="og:description"
+            content="Experience the best of Kyoto nightlife at Rock Bar ING. Enjoy live rock music, expertly crafted drinks, and a vibrant atmosphere on Kiyamachi Street."
+          />
+          {/* Twitter tags */}
+          <meta property="og:url" content="http://www.kyotoingbar.com/" />
+          <meta
+            property="og:image"
+            content="./images/ing-white-logo-black-background.jpg"
+          />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:title"
+            content="Rock Bar ING Kyoto - Experience Exciting Nightlife and Live Music"
+          />
+          <meta
+            name="twitter:description"
+            content="Dive into Kyoto's rock scene with live music and great drinks at Rock Bar ING. Located in the heart of Kyoto's nightlife district on Kiyamachi Street."
           />
         </Helmet>
 

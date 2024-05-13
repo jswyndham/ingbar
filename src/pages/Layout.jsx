@@ -2,6 +2,7 @@ import { useEffect, createContext, useMemo, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import SidebarMenu from "../components/SidebarMenu";
 import { Outlet } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 
 const LayoutContext = createContext();
 
@@ -42,14 +43,19 @@ function Layout() {
     [showSidebar]
   );
 
+  // helmetContext variable being passed as a prop
+  const helmetContext = {};
+
   return (
-    <LayoutContext.Provider value={value}>
-      <Navbar />
-      <SidebarMenu />
-      <section className="z-0 w-screen h-full bg-black text-white overflow-hidden">
-        <Outlet />
-      </section>
-    </LayoutContext.Provider>
+    <HelmetProvider context={helmetContext}>
+      <LayoutContext.Provider value={value}>
+        <Navbar />
+        <SidebarMenu />
+        <section className="z-0 w-screen h-full bg-black text-white overflow-hidden">
+          <Outlet />
+        </section>
+      </LayoutContext.Provider>
+    </HelmetProvider>
   );
 }
 
