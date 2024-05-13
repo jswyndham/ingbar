@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import { Layout, Home, Menu, Access, Error } from './pages';
+import { AnimationProvider } from './context/animation-context';
 
 const router = createBrowserRouter([
 	{
@@ -32,7 +33,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-	return <RouterProvider router={router} />;
+	return (
+		<AnimationProvider>
+			<RouterProvider router={router} />
+		</AnimationProvider>
+	);
 }
 
 export default App;

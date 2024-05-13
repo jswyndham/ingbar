@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { IoMdArrowDropdown, IoMdArrowDropup } from 'react-icons/io';
 
 // ***** Animation parameters menu item list ****
 const menuVariants = {
 	open: {
-		maxHeight: 1500,
+		maxHeight: 1000,
 		opacity: 1,
 		transition: {
 			maxHeight: {
@@ -36,62 +36,35 @@ const menuVariants = {
 	},
 };
 
-function BarMealsList() {
-	// ***** Set state for toggle ******
-	const [isMealsList, setIsMealsList] = useState(false);
-	const wrapperBarMealRef = useRef(null);
+function ShotsList() {
+	const [isWineList, setIsWineList] = useState(false);
 
-	// ***** Handler Functions ******
-
-	// Handle toggle
-	const handleBarMeals = (event) => {
-		event.stopPropagation(); // Stop the click from propagating further
-		setIsMealsList(!isMealsList);
+	const handleWineList = () => {
+		setIsWineList(!isWineList);
 	};
-
-	// Handle click outside the component
-	const handleBarMealsClickOutside = (event) => {
-		if (
-			wrapperBarMealRef.current &&
-			!wrapperBarMealRef.current.contains(event.target)
-		) {
-			setIsMealsList(false);
-		}
-	};
-
-	useEffect(() => {
-		document.addEventListener('click', handleBarMealsClickOutside);
-		return () => {
-			document.removeEventListener('click', handleBarMealsClickOutside);
-		};
-	}, [isMealsList]);
 
 	return (
-		<div
-			ref={wrapperBarMealRef}
-			className="flex flex-col justify-center items-center w-full md:w-9/12 xl:w-7/12 3xl:w-5/12"
-		>
+		<div className="flex flex-col justify-center items-center w-full md:w-9/12 xl:w-7/12 3xl:w-5/12">
 			<div
-				onClick={handleBarMeals}
+				onClick={handleWineList}
 				className="z-10 my-8 py-2 bg-gray-950 border-t border-b border-gray-400 w-full h-24 flex flex-col text-lg md:text-xl justify-center items-center text-center hover:cursor-pointer"
 			>
 				<div className="flex flex-col">
 					<h3 className="pb-1 font-robotoSlab text-white  flex justify-center items-center">
-						BAR MEALS
+						SHOTS
 					</h3>
 
 					<p className="font-robotoSlab text-white flex justify-center items-center">
-						バーのお食事
+						ショット
 					</p>
 				</div>
-
 				<AnimatePresence mode="wait">
-					{!isMealsList ? (
+					{!isWineList ? (
 						<motion.div
 							key="down-arrow"
-							style={{ opacity: 0 }}
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
+							style={{ opacity: 0 }}
 							exit={{ opacity: 0 }}
 							transition={{ duration: 0.5 }}
 						>
@@ -101,8 +74,8 @@ function BarMealsList() {
 						<motion.div
 							key="up-arrow"
 							initial={{ opacity: 0 }}
-							style={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
+							style={{ opacity: 0 }}
 							exit={{ opacity: 0 }}
 							transition={{ duration: 0.5 }}
 						>
@@ -113,72 +86,76 @@ function BarMealsList() {
 			</div>
 
 			<AnimatePresence>
-				{isMealsList && (
+				{isWineList && (
 					<motion.div
 						className="z-0 w-full flex flex-col justify-center items-center"
 						initial="closed"
-						style={{ opacity: 0 }}
 						animate="open"
+						style={{ opacity: 0 }}
 						exit="closed"
 						variants={menuVariants}
 					>
-						<div className="flex flex-col justify-center items-center py-4 text-xl font-serif">
-							<p className="text-yellow-500">Tacos Set</p>
+						<div className="flex flex-col justify-center items-center py-4 text-xl font-montserrat">
+							<p className="text-yellow-300">
+								** Mixer added (cola, soda, ginger ale, etc) **
+							</p>
 							<div className="flex flex-row">
-								<p>タコスセット</p>
-								<p className="pl-3 lg:pl-8">￥780</p>
+								<p>
+									コーラ、ソーダ、ジンジャエールで割りますと
+								</p>
+								<p className="pl-3 lg:pl-8">￥100</p>
 							</div>
 						</div>
 
 						<div className="flex flex-col justify-center items-center py-4 text-xl font-serif">
-							<p className="text-yellow-500">Fish & Chips</p>
+							<p className="text-yellow-500">Tequila</p>
 							<div className="flex flex-row">
-								<p>チキンアンドチップス</p>
-								<p className="pl-3 lg:pl-8">￥780</p>
+								<p>テキーラ</p>
+								<p className="pl-8">￥620</p>
 							</div>
 						</div>
 
 						<div className="flex flex-col justify-center items-center py-4 text-xl font-serif">
-							<p className="text-yellow-500">Chicken & Chips</p>
+							<p className="text-yellow-500">Rum</p>
 							<div className="flex flex-row">
-								<p>フライドポテト</p>
-								<p className="pl-3 lg:pl-8">￥400</p>
-							</div>
-						</div>
-
-						<div className="flex flex-col justify-center items-center py-4 text-xl font-serif">
-							<p className="text-yellow-500">Pizza</p>
-							<div className="flex flex-row">
-								<p>ピザ</p>
-								<p className="pl-3 lg:pl-8">￥750</p>
-							</div>
-						</div>
-
-						<div className="flex flex-col justify-center items-center py-4 text-xl font-serif">
-							<p className="text-yellow-500">Instant Ramen</p>
-							<div className="flex flex-row">
-								<p>インスタントラーメン </p>
-								<p className="pl-3 lg:pl-8">￥300</p>
+								<p>ラム</p>
+								<p className="pl-8">￥620</p>
 							</div>
 						</div>
 
 						<div className="flex flex-col justify-center items-center py-4 text-xl font-serif">
 							<p className="text-yellow-500">
-								Oden (Japanese pot hot)
+								Stone's Ginger Wine
 							</p>
 							<div className="flex flex-row">
-								<p>おでん</p>
-								<p className="pl-3 lg:pl-8">￥600</p>
+								<p>ストーンズジンジャーワイン</p>
+								<p className="pl-8">￥620</p>
+							</div>
+						</div>
+
+						<div className="flex flex-col justify-center items-center py-4 text-xl font-serif">
+							<p className="text-yellow-500">Jägermeister</p>
+							<div className="flex flex-row">
+								<p>イエガーマイスター</p>
+								<p className="pl-8">￥620</p>
 							</div>
 						</div>
 
 						<div className="flex flex-col justify-center items-center py-4 text-xl font-serif">
 							<p className="text-yellow-500">
-								Katsuobushi Donburi
+								Cinzano (Extra Dry, Rosso, & Bianco)
 							</p>
 							<div className="flex flex-row">
-								<p>かつおぶ丼</p>
-								<p className="pl-3 lg:pl-8">￥500</p>
+								<p>チンザノ</p>
+								<p className="pl-8">￥620</p>
+							</div>
+						</div>
+
+						<div className="flex flex-col justify-center items-center py-4 text-xl font-serif">
+							<p className="text-yellow-500">Ricard (liqueur)</p>
+							<div className="flex flex-row">
+								<p>リカール</p>
+								<p className="pl-8">￥800</p>
 							</div>
 						</div>
 					</motion.div>
@@ -188,4 +165,4 @@ function BarMealsList() {
 	);
 }
 
-export default BarMealsList;
+export default ShotsList;
