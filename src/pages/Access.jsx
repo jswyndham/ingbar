@@ -4,7 +4,7 @@ import ingFirstFloor from '../images/ing-first-floor.jpg';
 import ingStairs from '../images/ing-stairs.jpg';
 import ingDoor from '../images/ing-door.jpg';
 import logo from '../images/logo-ing-only-white.png';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react';
 
 function Access() {
@@ -24,13 +24,13 @@ function Access() {
 			}}
 			className="relative w-screen h-screen overflow-hidden"
 		>
-			<Helmet>
+			{/* <Helmet>
 				<title>Rock Bar ING Kyoto - Access Map</title>
 				<meta
 					name="description"
 					content="Rock Bar ING is located just next to Kiyamachi Street in Kyoto city, Japan. Find Kyoto's best late-night bar on the 2nd floor of the Kyoto Royal Building."
 				/>
-			</Helmet>
+			</Helmet> */}
 
 			<div className="absolute lg:top-0 left-0 w-full h-full overflow-auto bg-black bg-opacity-80 z-40 flex flex-col">
 				<div className="flex flex-col justify-center items-center">
