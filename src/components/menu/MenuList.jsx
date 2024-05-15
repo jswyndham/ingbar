@@ -25,7 +25,7 @@ const menuVariants = {
 		opacity: 0,
 		transition: {
 			maxHeight: {
-				duration: 0.8,
+				duration: 0.5,
 				ease: 'linear',
 			},
 			opacity: {
