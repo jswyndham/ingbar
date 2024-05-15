@@ -7,19 +7,19 @@ const Error = () => {
 		return (
 			<article className="relative overflow-hidden h-screen flex justify-center align-middle">
 				<img
-					src="./src/images/ing-beer.jpg"
+					src="./src/images/backgroundImages/ing-beer.jpg"
 					alt="Error page background"
 					className="w-full h-auto lg:hidden"
 				/>
 				<img
-					src="./src/images/ing-records.jpg"
+					src="./src/images/backgroundImages/ing-records.jpg"
 					alt="Error page background"
 					className="hidden w-auto h-auto lg:flex"
 				/>
 				<div className="absolute inset-0 bg-black opacity-60"></div>
 				<div className="absolute inset-0  flex flex-col justify-center text-center items-center px-12">
 					<img
-						src="./src/images/white-logo-main.png"
+						src="./src/images/logo-main.png"
 						alt="Main Logo"
 						initial="hidden"
 						animate="visible"
@@ -53,19 +53,19 @@ const Error = () => {
 	return (
 		<article className="relative overflow-hidden h-screen flex justify-center align-middle">
 			<img
-				src="./src/images/ing-beer.jpg"
+				src="./src/images/backgroundImages/ing-beer.jpg"
 				alt="Error page background"
 				className="w-full h-auto lg:hidden"
 			/>
 			<img
-				src="./src/images/ing-records.jpg"
+				src="./src/images/backgroundImages/ing-records.jpg"
 				alt="Error page background"
 				className="hidden w-auto h-auto lg:flex"
 			/>
 			<div className="absolute inset-0 bg-black opacity-60"></div>
 			<div className="absolute inset-0  flex flex-col justify-center text-center items-center px-12">
 				<img
-					src="./src/images/white-logo-main.png"
+					src="./src/images/logo-main.png"
 					alt="Main Logo"
 					initial="hidden"
 					animate="visible"
