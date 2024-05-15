@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
-import imageOne from "../images/ing-room.jpg";
-import imageTwo from "../images/ing-bar.jpg";
-import imageThree from "../images/hako_ing_logo-small.jpg";
-import imageFour from "../images/ing-records.jpg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-const images = [imageOne, imageTwo, imageThree, imageFour];
+import imageCarouselSchema from "../schema/imageCarousel/imageCarouselSchema";
 
 const ImageCarousel = () => {
   const [key, setKey] = useState(0);
+
+  const images = imageCarouselSchema();
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,11 +32,12 @@ const ImageCarousel = () => {
 
   return (
     <Slider {...settings}>
-      {images.map((url, index) => (
+      {images.map((image, index) => (
         <div key={index}>
           <img
-            src={url}
-            alt={`Slide ${index}`}
+            title={image.title}
+            src={image.image}
+            alt={`Slide - ${image.alt}`}
             className="max-w-full xl:max-w-7xl mx-auto"
           />
         </div>
