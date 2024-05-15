@@ -101,7 +101,7 @@ function Access() {
 				/>
 				<link
 					rel="canonical"
-					href="http://www.kyotoingbar.com/access"
+					href="http://www.kyotoingbar.com/access/"
 				/>
 			</Helmet>
 			<AccessJSONLD />

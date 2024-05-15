@@ -1,8 +1,19 @@
-# React + Vite
+# Rock Bar ING Kyoto Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the repository for the Rock Bar ING Kyoto website.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This website provides information about Rock Bar ING, a popular nightlife spot in Kyoto, Japan. The site includes details about the menu, location, and hours of operation.
+
+## Features
+
+-   **Home Page**: Overview of Rock Bar ING, including images and descriptions.
+-   **Menu Page**: Detailed menu with drink options.
+-   **Access Page**: Directions and map to the bar.
+-   **SEO Optimized**: Meta tags and structured data for search engine optimization.
+-   **Dark/Light Mode Favicon**: Automatic switching based on user's color scheme.
+
+## Developer
+
+This site was designed and built by JSW Web Dev.

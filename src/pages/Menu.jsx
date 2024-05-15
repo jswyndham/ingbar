@@ -82,15 +82,15 @@ function Menu() {
 				{/* Serverside SEO using react-helmet-async */}
 				<Helmet>
 					<title>
-						Directions to Rock Bar ING Kyoto - Access & Map
+						Menu - Rock Bar ING Kyoto | Drinks, Snacks, and More
 					</title>
 					<meta
 						name="description"
-						content="Find directions to Rock Bar ING Kyoto located at Kyoto Royal Building. Access details, parking information, and Google Maps link included."
+						content="Discover the menu at Rock Bar ING Kyoto. Full list of drinks and snacks, from local Japanese alcohol to basic cocktails and delicious bar snacks."
 					/>
 					<link
 						rel="canonical"
-						href="http://www.kyotoingbar.com/menu"
+						href="http://www.kyotoingbar.com/menu/"
 					/>
 				</Helmet>
 				<MenuJSONLD menuItems={menuItems} />
