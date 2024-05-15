@@ -46,8 +46,6 @@ const Home = () => {
 		},
 	];
 
-	// TODO - light mode vs dark mode icon + photos
-
 	return (
 		<>
 			<motion.article className="relative overflow-hidden w-screen h-full bg-black my-12 md:m-auto">
