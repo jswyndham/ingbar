@@ -51,7 +51,17 @@ const AboutUs = () => {
                   lonely planet
                 </a>
               </span>
-              {` `}and loved by people around the world, Rock Bar ING is the
+              {` `}and featured in{" "}
+              <span className="text-blue-300">
+                <a
+                  href="https://www.romancing-japan.com/posts/rock-bar-ing-kyoto-locals-hangout/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  online reviews
+                </a>
+              </span>
+              . ING is loved by people around the world, Rock Bar ING is the
               go-to venue for the Kyoto nightlife. Follow us online and connect
               with us no matter where you are.
             </p>

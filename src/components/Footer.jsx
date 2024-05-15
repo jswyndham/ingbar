@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../images/logo-footer.png";
-import SocialMediaLinks from "./SocialMediaLinks";
+import SocialMediaLinks from "./homePage/SocialMediaLinks";
 
 const Footer = () => {
   return (

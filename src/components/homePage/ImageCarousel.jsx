@@ -1,13 +1,13 @@
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useEffect, useState } from "react";
-import reviewCarouselSchema from "../schema/reviewCarousel/reviewCarouselSchema";
+import imageCarouselSchema from "../../schema/imageCarousel/imageCarouselSchema";
 
-const ReviewsCarousel = () => {
+const ImageCarousel = () => {
   const [key, setKey] = useState(0);
 
-  const images = reviewCarouselSchema();
+  const images = imageCarouselSchema();
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,7 +27,7 @@ const ReviewsCarousel = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 4000,
   };
 
   return (
@@ -35,9 +35,10 @@ const ReviewsCarousel = () => {
       {images.map((image, index) => (
         <div key={index}>
           <img
+            title={image.title}
             src={image.image}
             alt={`Slide - ${image.alt}`}
-            className="flex w-full xl:max-w-5xl mx-auto border border-slate-600 shadow-md shadow-slate-400"
+            className="max-w-full xl:max-w-7xl mx-auto"
           />
         </div>
       ))}
@@ -45,4 +46,4 @@ const ReviewsCarousel = () => {
   );
 };
 
-export default ReviewsCarousel;
+export default ImageCarousel;

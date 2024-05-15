@@ -1,7 +1,7 @@
 import logo from "../images/logo-ing-only-white.png";
-import backgroundImg from "../images/ing-records.jpg";
+import backgroundImg from "../images/backgroundImages/ing-records.jpg";
 import MenuList from "../components/menu/MenuList";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import barSnacksSchema from "../schema/menu/BarSnacksSchema";
