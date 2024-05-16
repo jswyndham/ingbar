@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "generate-sitemap": "node generate-sitemap.js",
     "predeploy": "npm run build",
-    "deploy": "touch dist/.nojekyll && gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@react-google-maps/api": "^2.19.3",
