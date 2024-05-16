@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import logo from "../images/logo-main.png";
 import logoBackImage from "../images/backgroundImages/pexels-edwardeyer-ing-home-sm.jpg";
@@ -12,7 +12,11 @@ import HomeJSONLD from "../components/seo/HomeJSONLD";
 
 const Home = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const [animationTriggered, setAnimationTriggered] = useState(false);
+
+  useEffect(() => {
+    setAnimationTriggered(true);
+  }, []);
 
   const logoVariants = {
     hidden: { opacity: 0, scale: 0.5 },
@@ -111,7 +115,7 @@ const Home = () => {
           alt="Main Logo"
           variants={logoVariants}
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          animate={animationTriggered ? "visible" : "hidden"}
           className="absolute inset-0 mx-auto w-8/12 md:max-w-3xl pt-6 md:pt-20 z-10"
         />
 
@@ -119,14 +123,14 @@ const Home = () => {
           src={logoBackImage}
           alt="Background"
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          animate={animationTriggered ? "visible" : "hidden"}
           variants={logoBackgroundVariants}
           className="w-full h-auto"
         />
 
         <motion.div
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          animate={animationTriggered ? "visible" : "hidden"}
           variants={contentFadeInVariants}
           className="relative mt-6 lg:mt-[-40px] xl:mt-[-60px] 2xl:mt-[-275px] 3xl:mt-[-550px] 4xl:mt-[-650px] 5xl:mt-[-875px] z-10"
         >

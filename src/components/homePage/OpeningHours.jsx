@@ -1,14 +1,10 @@
 import { Link } from "react-router-dom";
-
+import backgroundImage from "../../images/backgroundImages/ing-beer.jpg";
 const OpeningHours = () => {
   return (
     <article className="relative overflow-hidden max-w-4xl my-12 md:m-auto">
       {/* Background Image with overlay */}
-      <img
-        src="../../images/backgroundImages/ing-beer.jpg"
-        alt="Background"
-        className="w-full h-auto"
-      />
+      <img src={backgroundImage} alt="Background" className="w-full h-auto" />
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
       {/* Content Container using Flexbox */}
