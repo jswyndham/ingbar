@@ -5,7 +5,7 @@ const OpeningHours = () => {
     <article className="relative overflow-hidden max-w-4xl my-12 md:m-auto">
       {/* Background Image with overlay */}
       <img
-        src="./src/images/backgroundImages/ing-beer.jpg"
+        src="../../images/backgroundImages/ing-beer.jpg"
         alt="Background"
         className="w-full h-auto"
       />
