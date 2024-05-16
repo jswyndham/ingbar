@@ -20,23 +20,25 @@ const Error = () => {
           <img
             src="./src/images/logo-main.png"
             alt="Main Logo"
-            className="absolute inset-0 mx-auto w-9/12 md:max-w-xl py-2"
+            className="absolute inset-0 mx-auto w-9/12 md:max-w-md py-2"
           />
-          <h1 className="text-2xl md:text-4xl 2xl:text-5xl font-bold text-white pt-64 pb-6 lg:py-16">
-            Sorry! Page not found
-          </h1>
-          <h2 className="text-5xl lg:text-5xl font-bold text-red-600">
-            404 error
-          </h2>
-          <p className="text-xl lg:text-2xl 2xl:text-3xl py-6 text-white">
-            We cannot find the page you are looking for. Confirm that you have
-            entered the correct url address.
-          </p>
-          <p className="text-xl lg:text-2xl 2xl:text-3xl text-white">
-            申し訳ありませんが、お探しのページが見つかりません。それを確認します
-            正しい URL アドレスを入力しました。
-          </p>
+          <div className="md:px-20 lg:pt-32 max-w-5xl">
+            <h1 className="text-2xl md:text-4xl 2xl:text-5xl font-bold text-white pt-64 pb-6 lg:pt-28">
+              Sorry! Page not found
+            </h1>
+            <h2 className="text-5xl lg:text-5xl font-bold text-red-600">
+              404 error
+            </h2>
 
+            <p className="text-xl lg:text-2xl 2xl:text-3xl py-12  text-white">
+              We cannot find the page you are looking for. Confirm that you have
+              entered the correct url address.
+            </p>
+            <p className="text-xl lg:text-2xl 2xl:text-3xl text-white">
+              申し訳ありませんが、お探しのページが見つかりません。それを確認します
+              正しい URL アドレスを入力しました。
+            </p>
+          </div>
           <Link
             to="/"
             className="text-xl lg:text-2xl 2xl:text-3xl text-yellow-400 py-10 underline underline-offset-8"
@@ -64,23 +66,25 @@ const Error = () => {
         <img
           src="./src/images/logo-main.png"
           alt="Main Logo"
-          className="absolute inset-0 mx-auto md:max-w-xl lg:max-w-2xl py-2"
+          className="absolute inset-0 mx-auto w-9/12 md:max-w-md py-2"
         />
-        <h1 className="text-3xl 2xl:text-4xl font-bold text-red-500 pt-64 lg:py-16">
-          Webpage error!
-        </h1>
-        <p className="text-xl lg:text-2xl 2xl:text-3xl py-2 text-white">
-          I am afraid that this website has experienced an error.
-        </p>
-        <p className="text-xl lg:text-2xl 2xl:text-3xl pb-6 text-white">
-          申し訳ありませんが、このウェブサイトでエラーが発生しました。
-        </p>
-        <p className="text-xl lg:text-2xl 2xl:text-3xl text-white">
-          We apologize for the inconvenience.
-        </p>
-        <p className="text-xl lg:text-2xl 2xl:text-3xl text-white">
-          ご不便をおかけして申し訳ございません。
-        </p>
+        <div className="md:px-20 lg:pt-32 max-w-5xl">
+          <h1 className="text-3xl 2xl:text-4xl font-bold text-red-500 pt-64 lg:py-16">
+            Webpage error!
+          </h1>
+          <p className="text-xl lg:text-2xl 2xl:text-3xl py-2 text-white">
+            I am afraid that this website has experienced an error.
+          </p>
+          <p className="text-xl lg:text-2xl 2xl:text-3xl pb-6 text-white">
+            申し訳ありませんが、このウェブサイトでエラーが発生しました。
+          </p>
+          <p className="text-xl lg:text-2xl 2xl:text-3xl text-white">
+            We apologize for the inconvenience.
+          </p>
+          <p className="text-xl lg:text-2xl 2xl:text-3xl text-white">
+            ご不便をおかけして申し訳ございません。
+          </p>
+        </div>
         <Link
           to="/"
           className="text-xl lg:text-2xl 2xl:text-3xl text-yellow-400 py-10 underline underline-offset-8"

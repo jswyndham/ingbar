@@ -9,4 +9,7 @@ export default defineConfig({
   css: {
     postcss,
   },
+  build: {
+    outDir: "dist", // This is the default value
+  },
 });
