@@ -5,7 +5,7 @@ import youtube from "../../images/socialMedia/youtube-48.png";
 
 const SocialMediaLinks = () => {
   return (
-    <div className="flex flex-row gap-14 my-2">
+    <div className="flex flex-row gap-28 my-2">
       <a
         href="https://www.instagram.com/ingbarhacokatsuyuki/?hl=en"
         target="_blank"
