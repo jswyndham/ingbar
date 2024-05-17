@@ -103,13 +103,11 @@ function Access() {
 
       <div className="absolute lg:top-0 left-0 w-full h-full overflow-auto bg-black bg-opacity-80 z-40 flex flex-col">
         <div className="flex flex-col justify-center items-center">
-          <div className="flex justify-center">
-            <div className="h-fit w-full p-6 md:p-12 mt-24 md:mt-14 mb-12 bg-gray-600 bg-opacity-40 backdrop-blur-sm flex flex-row justify-center rounded-lg shadow-xl shadow-slate-700">
-              <h1 className="font-serif text-5xl md:text-7xl px-1 md:px-4 mt-1">
-                Access to
-              </h1>
-              <img src={logo} alt="ing logo" className="h-14 md:h-20" />
-            </div>
+          <div className="h-fit w-full p-6 md:p-12 mt-24 md:mt-14 mb-12 bg-gray-600 bg-opacity-40 backdrop-blur-sm flex flex-row justify-center rounded-lg shadow-xl shadow-slate-800">
+            <h1 className="font-serif text-5xl md:text-7xl px-1 md:px-4 mt-1">
+              Access to
+            </h1>
+            <img src={logo} alt="ing logo" className="h-14 md:h-20" />
           </div>
 
           <div className="flex flex-col text-lg lg:text-xl mx-4">

@@ -5,7 +5,7 @@ const AccessSection = ({ isAccessTranslate, variants, section }) => (
   <div
     className={`h-fit w-11/12 lg:w-9/12 2xl:w-7/12 p-2 lg:p-6 my-6 bg-gray-600 bg-opacity-40 backdrop-blur-sm flex flex-col ${
       section.reverse ? "2xl:flex-row-reverse" : "2xl:flex-row"
-    } justify-center rounded-lg shadow-xl shadow-slate-700`}
+    } justify-center rounded-lg shadow-xl shadow-slate-800`}
   >
     <div className="flex justify-center 2xl:align-middle 2xl:place-items-center 2xl:w-5/12 3xl:2xl:w-3/12">
       <motion.div

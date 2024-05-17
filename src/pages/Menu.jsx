@@ -96,7 +96,7 @@ function Menu() {
             initial="hidden"
             ref={ref}
             animate={isInView ? "visible" : "hidden"}
-            className="h-fit w-10/12 md:w-9/12 lg:w-7/12 2xl:w-5/12 p-12 mt-28 mb-16 bg-gray-500 bg-opacity-40 backdrop-blur-sm flex flex-row justify-center rounded-lg shadow-xl shadow-slate-900"
+            className="h-fit w-full p-12 mt-28 mb-16 bg-gray-500 bg-opacity-40 backdrop-blur-sm flex flex-row justify-center rounded-lg shadow-xl shadow-slate-900"
           >
             <img src={logo} alt="ing logo" className="h-14 md:h-20" />
             <h2 className="font-serif text-5xl md:text-7xl px-4 mt-1">Menu</h2>
