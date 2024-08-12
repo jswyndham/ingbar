@@ -67,7 +67,7 @@ const Home = () => {
 					/>
 
 					{/* Canonical tag */}
-					<link rel="canonical" href="http://www.kyotoingbar.com/" />
+					<link rel="canonical" href="https://www.kyotoingbar.com/" />
 
 					{/* Social Media tags */}
 					<meta property="og:type" content="website" />
@@ -82,7 +82,7 @@ const Home = () => {
 					{/* Twitter tags */}
 					<meta
 						property="og:url"
-						content="http://www.kyotoingbar.com/"
+						content="https://www.kyotoingbar.com/"
 					/>
 					<meta
 						property="og:image"
@@ -108,7 +108,7 @@ const Home = () => {
 						imagePath: '../images/logo-main.png',
 					}}
 					telephone="075-255-5087"
-					url="http://www.kyotoingbar.com/"
+					url="https://www.kyotoingbar.com/"
 					openingHours={openingHours}
 				/>
 

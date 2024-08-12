@@ -90,7 +90,7 @@ function Menu() {
 					/>
 					<link
 						rel="canonical"
-						href="http://www.kyotoingbar.com/menu/"
+						href="https://www.kyotoingbar.com/menu/"
 					/>
 				</Helmet>
 				<MenuJSONLD menuItems={menuItems} />

@@ -9,7 +9,7 @@ const links = [
 	// Add more routes here as needed
 ];
 
-const stream = new SitemapStream({ hostname: 'http://www.kyotoingbar.com' });
+const stream = new SitemapStream({ hostname: 'https://www.kyotoingbar.com' });
 
 Readable.from(links)
 	.pipe(stream)
