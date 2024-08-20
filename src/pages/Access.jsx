@@ -143,6 +143,7 @@ function Access() {
 					<div className="flex justify-end mt-16 mb-6">
 						<button
 							onClick={handleAccessTranslate}
+							type="button"
 							className="w-80 md:96 border border-red-700 py-3 px-6 rounded-full bg-gradient-to-b from-red-500 to-red-900 text-lg text-white font-bold shadow-lg transform hover:translate-y-1 active:translate-y-2"
 						>
 							{!isAccessTranslate

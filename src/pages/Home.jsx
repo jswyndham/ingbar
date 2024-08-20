@@ -1,14 +1,20 @@
-import { useEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useMemo, useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import logo from '/images/logo-main.png';
 import logoBackImage from '/images/backgroundImages/pexels-edwardeyer-ing-home-sm.jpg';
-import ImageCarousel from '../components/homePage/ImageCarousel';
-import OpeningHours from '../components/homePage/OpeningHours';
-import AboutUs from '../components/homePage/AboutUs';
-import Footer from '../components/Footer';
-import ReviewsCarousel from '../components/homePage/ReviewsCarousel';
-import { Helmet } from 'react-helmet-async';
 import HomeJSONLD from '../components/seo/HomeJSONLD';
+
+// Lazy-loaded components
+const ImageCarousel = lazy(() =>
+	import('../components/homePage/ImageCarousel')
+);
+const OpeningHours = lazy(() => import('../components/homePage/OpeningHours'));
+const AboutUs = lazy(() => import('../components/homePage/AboutUs'));
+const Footer = lazy(() => import('../components/Footer'));
+const ReviewsCarousel = lazy(() =>
+	import('../components/homePage/ReviewsCarousel')
+);
 
 const Home = () => {
 	const ref = useRef(null);
@@ -33,22 +39,25 @@ const Home = () => {
 		visible: { opacity: 1, transition: { delay: 1, duration: 2 } },
 	};
 
-	const openingHours = [
-		{
-			'@type': 'OpeningHoursSpecification',
-			dayOfWeek: [
-				'Monday',
-				'Tuesday',
-				'Wednesday',
-				'Thursday',
-				'Friday',
-				'Saturday',
-				'Sunday',
-			],
-			opens: '19:00',
-			closes: '05:00',
-		},
-	];
+	const openingHours = useMemo(
+		() => [
+			{
+				'@type': 'OpeningHoursSpecification',
+				dayOfWeek: [
+					'Monday',
+					'Tuesday',
+					'Wednesday',
+					'Thursday',
+					'Friday',
+					'Saturday',
+					'Sunday',
+				],
+				opens: '19:00',
+				closes: '05:00',
+			},
+		],
+		[]
+	);
 
 	return (
 		<>

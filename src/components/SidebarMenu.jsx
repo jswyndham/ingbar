@@ -64,41 +64,41 @@ const SidebarMenu = () => {
 
 				{/* Unordered list of links */}
 				<ul className="flex flex-col text-2xl pl-4 py-4 font-robotoSlab">
-					<Link to="/">
-						<li
-							className="flex flex-row py-8 transition-all active:text-red-500 hover:cursor-pointer"
-							onClick={toggleSidebar}
-						>
+					<li
+						className="flex flex-row py-8 transition-all active:text-red-500 hover:cursor-pointer"
+						onClick={toggleSidebar}
+					>
+						<Link to="/" className="flex items-center">
 							<div className="mt-0.5 pr-4">
 								<RiBeerFill />
 							</div>
-							<span className="">ING BAR | イング居酒屋</span>
-						</li>
-					</Link>
+							<span>ING BAR | イング居酒屋</span>
+						</Link>
+					</li>
 
-					<Link to="/menu">
-						<li
-							className="flex flex-row py-8 relative transition-all active:text-red-500  hover:cursor-pointer"
-							onClick={toggleSidebar}
-						>
+					<li
+						className="flex flex-row py-8 relative transition-all active:text-red-500 hover:cursor-pointer"
+						onClick={toggleSidebar}
+					>
+						<Link to="/menu" className="flex items-center">
 							<div className="mt-0.5 pr-4">
 								<PiBowlFoodFill />
 							</div>
-							<span className="">MENU | メニュー</span>
-						</li>
-					</Link>
+							<span>MENU | メニュー</span>
+						</Link>
+					</li>
 
-					<Link to="/access">
-						<li
-							className="flex flex-row py-8 relative transition-all active:text-red-500  hover:cursor-pointer"
-							onClick={toggleSidebar}
-						>
+					<li
+						className="flex flex-row py-8 relative transition-all active:text-red-500 hover:cursor-pointer"
+						onClick={toggleSidebar}
+					>
+						<Link to="/access" className="flex items-center">
 							<div className="mt-0.5 pr-4">
 								<FaMapMarkedAlt />
 							</div>
-							<span className="">ACCESS | アクセス</span>
-						</li>
-					</Link>
+							<span>ACCESS | アクセス</span>
+						</Link>
+					</li>
 				</ul>
 			</motion.nav>
 		</>
