@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import logo from '/images/logo-main.png';
 import logoBackImage from '/images/backgroundImages/pexels-edwardeyer-ing-home-sm.jpg';
 import HomeJSONLD from '../components/seo/HomeJSONLD';
+import Loading from '../components/Loading'; // Import the Loading component
 
 // Lazy-loaded components
 const ImageCarousel = lazy(() =>
@@ -141,28 +142,30 @@ const Home = () => {
 					className="w-full h-auto"
 				/>
 
-				<motion.div
-					initial="hidden"
-					animate={animationTriggered ? 'visible' : 'hidden'}
-					variants={contentFadeInVariants}
-					className="relative mt-6 lg:mt-[-40px] xl:mt-[-60px] 2xl:mt-[-275px] 3xl:mt-[-550px] 4xl:mt-[-650px] 5xl:mt-[-875px] z-10"
-				>
-					<div className="mb-20 lg:mb-24">
-						<ImageCarousel />
-					</div>
-					<div className="flex flex-col smd:flex-row-reverse justify-center xl:justify-between items-center max-w-7xl mx-auto">
-						<div className="xl:w-2/5 md:mx-2 xl:mr-12 mx-1 my-2 flex justify-center border border-slate-700">
-							<OpeningHours />
+				<Suspense fallback={<Loading />}>
+					<motion.div
+						initial="hidden"
+						animate={animationTriggered ? 'visible' : 'hidden'}
+						variants={contentFadeInVariants}
+						className="relative mt-6 lg:mt-[-40px] xl:mt-[-60px] 2xl:mt-[-275px] 3xl:mt-[-550px] 4xl:mt-[-650px] 5xl:mt-[-875px] z-10"
+					>
+						<div className="mb-20 lg:mb-24">
+							<ImageCarousel />
 						</div>
-						<div className="w-full xl:w-3/5 md:mx-2 py-2 xl:pr-24 mx-1">
-							<AboutUs />
+						<div className="flex flex-col smd:flex-row-reverse justify-center xl:justify-between items-center max-w-7xl mx-auto">
+							<div className="xl:w-2/5 md:mx-2 xl:mr-12 mx-1 my-2 flex justify-center border border-slate-700">
+								<OpeningHours />
+							</div>
+							<div className="w-full xl:w-3/5 md:mx-2 py-2 xl:pr-24 mx-1">
+								<AboutUs />
+							</div>
 						</div>
-					</div>
-					<div className="mx-2 lg:mt-24 mb-32">
-						<ReviewsCarousel />
-					</div>
-					<Footer />
-				</motion.div>
+						<div className="mx-2 lg:mt-24 mb-32">
+							<ReviewsCarousel />
+						</div>
+						<Footer />
+					</motion.div>
+				</Suspense>
 			</motion.article>
 		</>
 	);
