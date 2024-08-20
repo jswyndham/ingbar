@@ -2,6 +2,7 @@ import { lazy, Suspense, useMemo, useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import logo from '/images/logo-main.png';
+import logoBackImage from '/images/backgroundImages/pexels-edwardeyer-ing-home-sm.jpg';
 import HomeJSONLD from '../components/seo/HomeJSONLD';
 import Loading from '../components/Loading'; // Import the Loading component
 
@@ -133,15 +134,7 @@ const Home = () => {
 				/>
 
 				<motion.img
-					src="/images/backgroundImages/pexels-edwardeyer-ing-home-sm.webp"
-					srcSet="
-						/images/backgroundImages/pexels-edwardeyer-ing-home-sm-small.webp 500w,
-						/images/backgroundImages/pexels-edwardeyer-ing-home-sm-medium.webp 1000w,
-						/images/backgroundImages/pexels-edwardeyer-ing-home-sm-large.webp 1500w
-					"
-					sizes="(max-width: 600px) 480px,
-						(max-width: 1200px) 800px,
-						1200px"
+					src={logoBackImage}
 					alt="Background"
 					initial="hidden"
 					animate={animationTriggered ? 'visible' : 'hidden'}
