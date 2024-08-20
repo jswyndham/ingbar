@@ -2,46 +2,95 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rock Bar ING Kyoto</title>
 
-		<link
-			rel="preconnect"
-			href="https://fonts.gstatic.com"
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
-		/>
-
+		<!-- Preconnect to speed up font loading -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<!-- Preload critical fonts -->
 		<link
-			href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap"
-			rel="stylesheet"
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+			as="style"
 		/>
-		<link href="https://fonts.cdnfonts.com/css/japanese" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+			media="print"
+			onload="this.media='all'"
+		/>
+		<noscript
+			><link
+				rel="stylesheet"
+				href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+		/></noscript>
+
+		<!-- Load non-critical fonts asynchronously -->
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap"
+			as="style"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap"
+			media="print"
+			onload="this.media='all'"
+		/>
+		<noscript
+			><link
+				rel="stylesheet"
+				href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap"
+		/></noscript>
+
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
+			as="style"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
+			media="print"
+			onload="this.media='all'"
+		/>
+		<noscript
+			><link
+				rel="stylesheet"
+				href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
+		/></noscript>
+
+		<link
+			rel="preload"
+			href="https://fonts.cdnfonts.com/css/japanese"
+			as="style"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.cdnfonts.com/css/japanese"
+			media="print"
+			onload="this.media='all'"
+		/>
+		<noscript
+			><link
+				rel="stylesheet"
+				href="https://fonts.cdnfonts.com/css/japanese"
+		/></noscript>
+
+		<!-- Favicon -->
 		<link
 			id="favicon"
 			rel="icon"
 			type="image/svg+xml"
 			href="./ing-white-logo-transparent.png"
 		/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<link
-			href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
-			rel="stylesheet"
-		/>
-
-		<link
-			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-			rel="stylesheet"
-		/>
-		<title>Rock Bar ING Kyoto</title>
 	</head>
 	<body>
-		<main className="h-screen" id="root"></main>
+		<main id="root"></main>
 
+		<!-- Main JavaScript -->
 		<script type="module" src="./src/main.jsx"></script>
 	</body>
 </html>

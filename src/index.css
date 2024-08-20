@@ -114,3 +114,10 @@ body {
 	box-shadow: 0px 0px 10px 0px rgba(70, 70, 70, 0.5); /* slight shadow for depth */
 	z-index: 1040; /* High enough to be above the page content but below the toggle button */
 }
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxMKTU1Kvnz.woff2')
+		format('woff2');
+	font-display: swap;
+}
