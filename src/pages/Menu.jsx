@@ -1,20 +1,25 @@
-import logo from '/images/logo-ing-only-white.png';
-import backgroundImg from '/images/backgroundImages/ing-records.jpg';
-import MenuList from '../components/menu/MenuList';
-import { useRef } from 'react';
+import { lazy, Suspense, useRef } from 'react';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import barSnacksSchema from '../schema/menu/BarSnacksSchema';
-import barMealSchema from '../schema/menu/BarMealSchema';
-import beerSchema from '../schema/menu/BeerSchema';
-import ginVodkaBasedDrinksSchema from '../schema/menu/ginVodkaBasedDrinksSchema';
-import japaneseAlcoholSchema from '../schema/menu/japaneseAlcoholSchema';
-import liqueurSchema from '../schema/menu/liqueurSchema';
-import whiskeySchema from '../schema/menu/whiskeySchema';
-import wineSchema from '../schema/menu/wineSchema';
-import nonAlcoholicDrinksSchema from '../schema/menu/nonAlcoholicSchema';
-import shotsSchema from '../schema/menu/shotsSchema';
+import Loading from '../components/Loading';
+import logo from '/images/logo-ing-only-white.png';
+import backgroundImg from '/images/backgroundImages/ing-records.jpg';
+import {
+	barSnacksSchema,
+	barMealSchema,
+	beerSchema,
+	ginVodkaBasedDrinksSchema,
+	japaneseAlcoholSchema,
+	liqueurSchema,
+	whiskeySchema,
+	wineSchema,
+	nonAlcoholicSchema,
+	shotsSchema,
+} from '../schema/menu';
 import MenuJSONLD from '../components/seo/MenuJSONLD';
+
+// Lazy-loaded components
+const MenuList = lazy(() => import('../components/menu/MenuList'));
 
 function Menu() {
 	// ***** menu schema ******
@@ -27,7 +32,7 @@ function Menu() {
 	const ginVodkaBasedDrinks = ginVodkaBasedDrinksSchema();
 	const shotsList = shotsSchema();
 	const liqueurList = liqueurSchema();
-	const NonAlcoholic = nonAlcoholicDrinksSchema();
+	const NonAlcoholic = nonAlcoholicSchema();
 
 	const ref = useRef(null);
 	const isInView = useInView(ref, { once: true });
@@ -114,91 +119,97 @@ function Menu() {
 					</motion.div>
 				</motion.div>
 
-				<AnimatePresence>
-					<div className="w-full h-full">
-						<motion.div
-							layout
-							variants={menuList}
-							initial="hidden"
-							animate={isInView ? 'visible' : 'hidden'}
-							transition={{
-								ease: 'linear',
-								layout: { type: 'spring' },
-							}}
-							className="w-full h-auto flex flex-col items-center px-5"
-						>
-							<MenuList
-								englishMenuTitle={barMeals[0].engTitle}
-								japaneseMenuTitle={barMeals[0].jpnTitle}
-								items={barMeals[0].items}
-							/>
+				<Suspense fallback={<Loading />}>
+					<AnimatePresence>
+						<div className="w-full h-full">
+							<motion.div
+								layout
+								variants={menuList}
+								initial="hidden"
+								animate={isInView ? 'visible' : 'hidden'}
+								transition={{
+									ease: 'linear',
+									layout: { type: 'spring' },
+								}}
+								className="w-full h-auto flex flex-col items-center px-5"
+							>
+								<MenuList
+									englishMenuTitle={barMeals[0].engTitle}
+									japaneseMenuTitle={barMeals[0].jpnTitle}
+									items={barMeals[0].items}
+								/>
 
-							<MenuList
-								englishMenuTitle={barSnacks[0].engTitle}
-								japaneseMenuTitle={barSnacks[0].jpnTitle}
-								items={barSnacks[0].items}
-							/>
+								<MenuList
+									englishMenuTitle={barSnacks[0].engTitle}
+									japaneseMenuTitle={barSnacks[0].jpnTitle}
+									items={barSnacks[0].items}
+								/>
 
-							<MenuList
-								englishMenuTitle={beerList[0].engTitle}
-								japaneseMenuTitle={beerList[0].jpnTitle}
-								items={beerList[0].items}
-							/>
+								<MenuList
+									englishMenuTitle={beerList[0].engTitle}
+									japaneseMenuTitle={beerList[0].jpnTitle}
+									items={beerList[0].items}
+								/>
 
-							<MenuList
-								englishMenuTitle={wineList[0].engTitle}
-								japaneseMenuTitle={wineList[0].jpnTitle}
-								items={wineList[0].items}
-							/>
+								<MenuList
+									englishMenuTitle={wineList[0].engTitle}
+									japaneseMenuTitle={wineList[0].jpnTitle}
+									items={wineList[0].items}
+								/>
 
-							<MenuList
-								englishMenuTitle={japaneseAlcohol[0].engTitle}
-								japaneseMenuTitle={japaneseAlcohol[0].jpnTitle}
-								items={japaneseAlcohol[0].items}
-							/>
+								<MenuList
+									englishMenuTitle={whiskeyList[0].engTitle}
+									japaneseMenuTitle={whiskeyList[0].jpnTitle}
+									extraCost={whiskeyList[0].extraCost}
+									items={whiskeyList[0].items}
+								/>
 
-							<MenuList
-								englishMenuTitle={whiskeyList[0].engTitle}
-								japaneseMenuTitle={whiskeyList[0].jpnTitle}
-								extraCost={whiskeyList[0].extraCost}
-								items={whiskeyList[0].items}
-							/>
+								<MenuList
+									englishMenuTitle={
+										japaneseAlcohol[0].engTitle
+									}
+									japaneseMenuTitle={
+										japaneseAlcohol[0].jpnTitle
+									}
+									items={japaneseAlcohol[0].items}
+								/>
 
-							<MenuList
-								englishMenuTitle={
-									ginVodkaBasedDrinks[0].engTitle
-								}
-								japaneseMenuTitle={
-									ginVodkaBasedDrinks[0].jpnTitle
-								}
-								additionCost={
-									ginVodkaBasedDrinks[0].additionalCost
-								}
-								items={ginVodkaBasedDrinks[0].items}
-							/>
+								<MenuList
+									englishMenuTitle={
+										ginVodkaBasedDrinks[0].engTitle
+									}
+									japaneseMenuTitle={
+										ginVodkaBasedDrinks[0].jpnTitle
+									}
+									additionCost={
+										ginVodkaBasedDrinks[0].additionalCost
+									}
+									items={ginVodkaBasedDrinks[0].items}
+								/>
 
-							<MenuList
-								englishMenuTitle={shotsList[0].engTitle}
-								japaneseMenuTitle={shotsList[0].jpnTitle}
-								extraCost={shotsList[0].extraCost}
-								items={shotsList[0].items}
-							/>
+								<MenuList
+									englishMenuTitle={shotsList[0].engTitle}
+									japaneseMenuTitle={shotsList[0].jpnTitle}
+									extraCost={shotsList[0].extraCost}
+									items={shotsList[0].items}
+								/>
 
-							<MenuList
-								englishMenuTitle={liqueurList[0].engTitle}
-								japaneseMenuTitle={liqueurList[0].jpnTitle}
-								additionCost={liqueurList[0].additionalCost}
-								items={liqueurList[0].items}
-							/>
+								<MenuList
+									englishMenuTitle={liqueurList[0].engTitle}
+									japaneseMenuTitle={liqueurList[0].jpnTitle}
+									additionCost={liqueurList[0].additionalCost}
+									items={liqueurList[0].items}
+								/>
 
-							<MenuList
-								englishMenuTitle={NonAlcoholic[0].engTitle}
-								japaneseMenuTitle={NonAlcoholic[0].jpnTitle}
-								items={NonAlcoholic[0].items}
-							/>
-						</motion.div>
-					</div>
-				</AnimatePresence>
+								<MenuList
+									englishMenuTitle={NonAlcoholic[0].engTitle}
+									japaneseMenuTitle={NonAlcoholic[0].jpnTitle}
+									items={NonAlcoholic[0].items}
+								/>
+							</motion.div>
+						</div>
+					</AnimatePresence>
+				</Suspense>
 			</motion.div>
 		</motion.article>
 	);
