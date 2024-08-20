@@ -8,6 +8,7 @@ const OpeningHours = () => {
 				src={backgroundImage}
 				alt="Background"
 				className="w-full h-auto"
+				loading="lazy"
 			/>
 			<div className="absolute inset-0 bg-black opacity-50"></div>
 
